@@ -1,0 +1,12 @@
+<mat-dialog-content>
+    <div class="user-details">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Cnic::</strong> {{ user.cnic }}</p>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="close()">Close</button>
+  </mat-dialog-actions>
+  

@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Select Download Format</h2>
+    <mat-dialog-content>
+      <mat-radio-group [(ngModel)]="selectedFormat">
+        <mat-radio-button value="excel">Excel</mat-radio-button>
+        <mat-radio-button value="pdf">PDF</mat-radio-button>
+      </mat-radio-group>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-raised-button color="warn"  (click)="onCancel()">Cancel</button>
+      <button mat-raised-button  style="background-color: cadetblue; color: white;"[disabled]="!selectedFormat" (click)="onDownload()">Download</button>
+    </mat-dialog-actions>

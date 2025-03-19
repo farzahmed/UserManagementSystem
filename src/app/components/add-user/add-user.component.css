@@ -1,0 +1,88 @@
+/* Full viewport height container with Flexbox for centering */
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* Card styling */
+.mat-card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 800px; 
+}
+
+.mat-card-header {
+  background-color: cadetblue;
+  color: white;
+  border-bottom: 2px solid #ddd;
+  padding: 20px; 
+}
+
+.mat-card-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.mat-card-content {
+  padding: 30px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+/* Error text color */
+.mat-error {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+/* Submit button styling */
+button.mat-raised-button {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+/* Button padding and hover effect */
+button.mat-raised-button:hover {
+  background-color: green;
+}
+
+/* Center text */
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .container-fluid {
+    padding: 15px; 
+  }
+
+  .mat-card {
+    max-width: 100%;
+  }
+
+  button.mat-raised-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .mat-form-field {
+    margin-bottom: 15px;
+  }
+}

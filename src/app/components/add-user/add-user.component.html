@@ -1,0 +1,50 @@
+<h2 mat-dialog-title class="text-center">
+  {{ actionType === 'Add' ? 'Add New User' : actionType === 'Edit' ? 'Edit User' : 'View User' }}
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm" *ngIf="actionType !== 'View'">
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" [readonly]="actionType === 'View'" />
+      <mat-error *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+        Name is required and must be at least 3 characters long.
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" [readonly]="actionType === 'View'" />
+      <mat-error *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        Please enter a valid email.
+      </mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>CNIC</mat-label>
+      <input matInput formControlName="cnic" appCnicFormatter maxlength="15" placeholder="XXXXX-XXXXXXX-X" />
+      <mat-error *ngIf="userForm.get('cnic')?.invalid && userForm.get('cnic')?.touched">
+        Please enter a valid CNIC.
+      </mat-error>
+    </mat-form-field>
+    
+    
+    
+    
+  </form>
+  <div *ngIf="actionType === 'View'">
+    <p><strong>Name:</strong> {{ data?.user?.name | uppercase }}</p>
+    <p><strong>Email:</strong> {{ data?.user?.email | capital }}</p>
+    <p><strong>CNIC:</strong> {{ data?.user?.cnic }}</p>
+  </div>
+  
+  
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="warn"  (click)="close()">Close</button>
+  <button mat-raised-button  style="    background-color: cadetblue; color: white;
+" [disabled]="userForm.invalid" *ngIf="actionType !== 'View'"
+    (click)="save()">Save</button>
+  <!-- <button mat-raised-button color="primary" *ngIf="actionType === 'View'" (click)="close()">Close</button> -->
+</mat-dialog-actions>

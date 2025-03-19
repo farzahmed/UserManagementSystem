@@ -1,0 +1,12 @@
+/* app.component.css */
+.app-toolbar {
+    display: flex;
+    justify-content: space-between; /* Ensures elements are spaced apart */
+    align-items: center; /* Vertically center items */
+    background-color: cadetblue;
+  }
+  
+  .spacer {
+    flex-grow: 1; /* This pushes the button to the right */
+  }
+  

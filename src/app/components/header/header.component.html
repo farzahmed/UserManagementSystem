@@ -1,0 +1,8 @@
+<mat-toolbar *ngIf="isLoggedIn" style="  height: 54px;     background-color: cadetblue;" color="primary" class="app-toolbar">
+    <span >Management System</span>
+  
+    <span class="spacer"></span>
+  
+    <!-- <button *ngIf="!isLoggedIn" mat-button (click)="login()">Login</button> -->
+    <button *ngIf="isLoggedIn" mat-button (click)="logout()" style="margin-left: 1260px; width: 54px; height: 54px;   ">Logout</button>
+  </mat-toolbar>
